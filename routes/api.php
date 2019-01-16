@@ -20,7 +20,7 @@ Route::group([
 
 ], function () {
 
-    Route::post('authenticate', 'AuthController@authenticate');
-    Route::post('refresh', 'AuthController@refresh');
+    Route::post('authenticate', 'AuthController@authenticate')->name('api.authenticate');
+    Route::post('register', 'AuthController@register')->name('api.register');
 
 });
