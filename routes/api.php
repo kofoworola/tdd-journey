@@ -13,14 +13,13 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::group([
-
-    'middleware' => 'api',
-    'prefix' => 'auth'
-
-], function () {
+Route::group(['middleware' => 'api', 'prefix' => 'auth'], function () {
 
     Route::post('authenticate', 'AuthController@authenticate')->name('api.authenticate');
     Route::post('register', 'AuthController@register')->name('api.register');
-
 });
+
+Route::group(['middleware' => 'api','prefix' => 'recipe'],function (){
+    Route::post('create','RecipeController@create')->name('recipe.create');
+});
+

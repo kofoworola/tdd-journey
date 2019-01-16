@@ -48,4 +48,12 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+
+    /**
+     * Get all recipes
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function recipes(){
+        return $this->hasMany(Recipe::class);
+    }
 }
