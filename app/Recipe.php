@@ -12,7 +12,7 @@ class Recipe extends Model
      * The owner of this delicious recipe
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function user(){
-        return $this->belongsTo(User::class);
+    public function publisher(){
+        return $this->belongsTo(User::class,'publisher_id');
     }
 }

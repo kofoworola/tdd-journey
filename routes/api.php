@@ -19,7 +19,11 @@ Route::group(['middleware' => 'api', 'prefix' => 'auth'], function () {
     Route::post('register', 'AuthController@register')->name('api.register');
 });
 
-Route::group(['middleware' => 'api','prefix' => 'recipe'],function (){
+Route::group(['middleware' => ['api','auth'],'prefix' => 'recipe'],function (){
     Route::post('create','RecipeController@create')->name('recipe.create');
+    Route::get('all','RecipeController@all')->name('recipe.all');
+    Route::post('update/{recipe}','RecipeController@update')->name('recipe.update');
+    Route::get('show/{recipe}','RecipeController@show')->name('recipe.show');
+    Route::post('delete/{recipe}','RecipeController@delete')->name('recipe.delete');
 });
 

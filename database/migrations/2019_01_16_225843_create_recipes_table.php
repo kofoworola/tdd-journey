@@ -17,7 +17,7 @@ class CreateRecipesTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('procedure')->nullable();
-            $table->tinyInteger('user_id');
+            $table->tinyInteger('publisher_id')->nullable();
             $table->timestamps();
         });
     }
